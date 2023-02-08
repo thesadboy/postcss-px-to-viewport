@@ -75,11 +75,11 @@ forked from https://github.com/evrone/postcss-px-to-viewport ，更改mediaQuery
 ### 安装
 使用npm安装
 ```
-$ npm install postcss-px-to-viewport --save-dev
+$ npm install postcss-px-to-viewport-scope --save-dev
 ```
 或者使用yarn进行安装
 ```
-$ yarn add -D postcss-px-to-viewport
+$ yarn add -D postcss-px-to-viewport-scope
 ```
 
 ### 配置参数
