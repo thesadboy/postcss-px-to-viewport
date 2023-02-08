@@ -1,5 +1,5 @@
 # postcss-px-to-viewport
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
+forked from https://github.com/evrone/postcss-px-to-viewport and change mediaQuery param to scope
 
 English | [中文](README_CN.md) 
 
@@ -94,7 +94,7 @@ Default Options:
   fontViewportUnit: 'vw',
   selectorBlackList: [],
   minPixelValue: 1,
-  mediaQuery: false,
+  scope: 'normal',
   replace: true,
   exclude: undefined,
   include: undefined,
@@ -120,7 +120,7 @@ Default Options:
     - If value is regexp, it checks to see if the selector matches the regexp.
         - `[/^body$/]` will match `body` but not `.body`
 - `minPixelValue` (Number) Set the minimum pixel value to replace.
-- `mediaQuery` (Boolean) Allow px to be converted in media queries.
+- `scope` ('normal'|'all'|'mediaQuery') Convert scope. normal: exclude mediaQuery. all: all scope, mediaQuery: only mediaQuery
 - `replace` (Boolean) replaces rules containing vw instead of adding fallbacks.
 - `exclude` (Regexp or Array of Regexp) Ignore some files like 'node_modules'
     - If value is regexp, will ignore the matches files.
@@ -162,7 +162,7 @@ Example:
 ```
 
 There are several more reasons why your pixels may not convert, the following options may affect this:
-`propList`, `selectorBlackList`, `minPixelValue`, `mediaQuery`, `exclude`, `include`.
+`propList`, `selectorBlackList`, `minPixelValue`, `scope`, `exclude`, `include`.
 
 #### Use with PostCss configuration file
 

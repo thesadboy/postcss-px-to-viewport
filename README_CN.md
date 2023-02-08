@@ -1,5 +1,6 @@
 # postcss-px-to-viewport
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
+
+forked from https://github.com/evrone/postcss-px-to-viewport ，更改mediaQuery参数为scope，更精细化控制替换范围
 
 [English](README.md) | 中文
 
@@ -94,7 +95,7 @@ $ yarn add -D postcss-px-to-viewport
   fontViewportUnit: 'vw',
   selectorBlackList: [],
   minPixelValue: 1,
-  mediaQuery: false,
+  scope: 'normal',
   replace: true,
   exclude: undefined,
   include: undefined,
@@ -120,7 +121,7 @@ $ yarn add -D postcss-px-to-viewport
     - 如果传入的值为正则表达式的话，那么就会依据CSS选择器是否匹配该正则
         - 例如 `selectorBlackList` 为 `[/^body$/]` , 那么 `body` 会被忽略，而 `.body` 不会
 - `minPixelValue` (Number) 设置最小的转换数值，如果为1的话，只有大于1的值会被转换
-- `mediaQuery` (Boolean) 媒体查询里的单位是否需要转换单位
+- `scope` ('normal'|'all'|'mediaQuery') 转换单位的范围，normal：不包含媒体查询，all：所有范围，mediaQuery：仅包含媒体查询
 - `replace` (Boolean) 是否直接更换属性值，而不添加备用属性
 - `exclude` (Array or Regexp) 忽略某些文件夹下的文件或特定文件，例如 'node_modules' 下的文件
     - 如果值是一个正则表达式，那么匹配这个正则的文件会被忽略
@@ -162,7 +163,7 @@ Example:
 ```
 
 There are several more reasons why your pixels may not convert, the following options may affect this:
-`propList`, `selectorBlackList`, `minPixelValue`, `mediaQuery`, `exclude`, `include`.
+`propList`, `selectorBlackList`, `minPixelValue`, `scope`, `exclude`, `include`.
 
 #### 使用PostCss配置文件时
 
